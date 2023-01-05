@@ -2,13 +2,13 @@ async function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-let fromQueryCount = 1;
+let queryCount = 1;
 
-export async function getDataDirectlyOnComponent() {
+export async function getPageInfoFromDatabase() {
   // simulate a database query
   await wait(1000);
-  console.log('getDataDirectlyOnComponent', fromQueryCount);
-  fromQueryCount++;
+  console.log('Query No.', queryCount);
+  queryCount++;
 
   return {
     title: 'this is my page title',

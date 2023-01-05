@@ -1,16 +1,13 @@
-import { getDataDirectlyOnComponent } from '../database';
-import styles from './page.module.css';
+import { getPageInfoFromDatabase } from '../database/index';
 
 export default async function Home() {
-  const pageInfo = await getDataDirectlyOnComponent();
+  // Database query No. 2
+  const pageInfo = await getPageInfoFromDatabase();
 
   return (
-    <main className={styles.main}>
-      <div>
-        <h1>{pageInfo.title}</h1>
-        <hr />
-        <h2>{pageInfo.data}</h2>
-      </div>
+    <main>
+      <h1>{pageInfo.title}</h1>
+      <p>{pageInfo.data} </p>
     </main>
   );
 }
