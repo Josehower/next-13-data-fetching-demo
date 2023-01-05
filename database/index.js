@@ -10,16 +10,9 @@ export async function getDataDirectlyOnComponent() {
   console.log('getDataDirectlyOnComponent', fromQueryCount);
   fromQueryCount++;
 
-  return { data: 'This is coming from a query directly on the component' };
-}
-
-let fromFetchCount = 1;
-
-export async function getDataFromFetch() {
-  // simulate a database query
-  await wait(1000);
-  console.log('getDataFromFetch', fromFetchCount);
-  fromFetchCount++;
-
-  return { data: 'This is coming from a api route' };
+  return {
+    title: 'this is my page title',
+    description: 'this is my page description',
+    data: 'This is coming from a query directly on the component',
+  };
 }
